@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* ZhuoMeiFilm-UI-pc QQ:2394179198 V20141012 */
+
+body { margin:0 auto;padding:0; }
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset{ margin:0;padding:0; }
+img,fieldset{ border:0; }
+/* Corrects inline-block not defined in IE6/7/8 and FF3 */
+audio,canvas,video { display: inline-block; *display: inline; *zoom: 1; }
+ul,ol,li{list-style:none}
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body {font-size:12px; font-family:"微软雅黑", "宋体", Verdana, Geneva, sans-serif; color:#000;}
+/*链接*/
+a:link{color:#333;text-decoration:none;}
+a:visited{color:#333;text-decoration:none;}
+a:hover,a:active,a:focus{color:#333; text-decoration:none;}
+a:focus { -moz-outline-style: none; } /*消除链接虚线框 FF ie使用a的hidefocus="true"属性*/ 
+/*CLEARFIX*/
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix { display: inline-block; }
+.clearfix { display: block; *zoom:1; }
+/*---------- s 常用样式 ----------*/
+/*高度*/
+.b5 {height:5px;font-size:1px;}
+.b10 {height:10px;font-size:1px;}
+.b15 {height:15px;font-size:1px;}
+.b20 {height:20px;font-size:1px;}
+
+/*导航菜单*/
+#nav { height:58px; width:980px; background:url(../images/nav_bg.png) repeat-x; margin:0 auto;}
+#nav ul {width:960px; margin:0 auto;}
+#nav ul li {float:left; height:58px; line-height:58px; background:url(../images/nav_libg.png) right center no-repeat;}
+#nav ul li.navlast { background:none;}
+#nav ul li a {width:120px;height:58px; font-family:"微软雅黑"; font-size:14px; color:#000; font-weight:bold; display:block; text-align:center;}
+#nav ul li a:hover { background: url(../images/nav_h.png) center top no-repeat; color:#C00; padding-left:0px; margin-left:-0px; position:relative; z-index:10;}
+#nav ul li a.on {background: url(../images/nav_h.png) center top no-repeat;padding-left:0px; margin-left:-0px; color:#C00;}
+/* 实例
+  <nav id="nav">
+	<ul class="">
+    	<li><a href="#" class="on">网站首页</a></li>
+        <li><a href="#"></a></li>
+        <li class="navlast"><a href="#"></a></li>
+    </ul>
+  </nav>
+*/
+
+/*文本列表 标题+日期 */
+.onelist{}
+.onelist li{
+	width:100%;
+	overflow:hidden;
+	clear:both;
+	padding:12px 0px;
+	border-bottom:1px dashed #EEE;
+	color:#aaa;
+}
+.onelist li a.title{
+	float:left;
+	background:url(../images/arrow1.gif) left center no-repeat;/*标题前符号*/
+	overflow:hidden;
+	line-height:18px;
+	font-size:14px;
+	margin-left:8px;
+	padding-left:20px;
+}
+.onelist span.datai{
+	display:block;
+	float:right;
+	line-height:18px;
+	color:#555;
+	padding-left:12px;
+	padding-right:10px;
+}
+
+/*图片列表 图片+标题 */
+.imglist { float:left; width:100%; height: auto; overflow:hidden; }
+.imglist li { float:left; padding:8px 12px; }
+.imglist li a { display:block; width:162px; } /* 图片宽度+2 */
+.imglist li img { border:1px solid #990; padding:1px; background:#fff; width:160px; height:90px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } /* 图片宽度 线框颜色 */
+.imglist li img:hover { border:1px solid #3D7638; } /* 线框变化 */
+.imglist li span { display:block; width:160px; height:38px; line-height:38px; text-align:center; overflow:hidden;} /* 文本宽度 高度 */
+.imglist li a:hover span {cursor: pointer;} /* IE FIREFOX 通用 */
+
+/*分页形式1 dede*/
+.pagelist {margin-top:10px;}
+.zhuomeifilm-page{ width:100%;}
+.zhuomeifilm-page ul{
+	float:left;
+	padding:12px 0px 12px 16px;
+}
+.zhuomeifilm-page ul li{
+	float:left;
+	font-family:Tahoma;
+	line-height:17px;
+	margin-right:6px;
+	border:1px solid #E9E9E9;
+}
+.zhuomeifilm-page ul li a{
+	float:left;
+	padding:2px 4px 2px;
+	color:#555;
+	display:block;
+}
+.zhuomeifilm-page ul li a:hover{
+	color:#690;
+	text-decoration:none;
+	padding:2px 4px 2px;
+}
+.zhuomeifilm-page ul li.thisclass,
+.zhuomeifilm-page ul li.thisclass a,.pagebox ul li.thisclass a:hover{
+	background-color:#F8F8F8;
+	padding:2px 4px 2px;
+	font-weight:bold;
+}
+.zhuomeifilm-page .pageinfo{
+	line-height:21px;
+	padding:12px 10px 12px 16px;
+	color:#999;
+}
+.zhuomeifilm-page .pageinfo strong{
+	color:#555;
+	font-weight:normal;
+	margin:0px 2px;
+}
+/* 调用方式
+        <div class="zhuomeifilm-page">
+          <ul class="pagelist">
+           {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="6"/}
+          </ul>
+        </div>
+*/
+
+/*内容页正文*/
+/*标题*/
+.vtitle{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	padding-top:0px;
+	overflow:hidden;
+}
+.vtitle h2{
+	font-size:20px;
+	color:#000;
+}
+/*标题下*/
+.vinfo{
+	height:24px;
+	line-height:17px;
+	text-align:center;
+	color:#666;
+	overflow:hidden;
+}
+/*内容*/
+.vcontent{
+	font-size:14px;
+	padding:10px 10px;
+	line-height:28px;
+	color:#333;
+}
+
+/* 常用居中 */
+#boxcenter-{margin:0 auto;overflow:auto/*overflow: hidden*/; _height:1%;}
+#container- { width:980px; margin:0 auto;overflow:auto/*overflow: hidden*/; _height:1%;}
+#header-{width:980px;height:auto !important; min-height:100px; margin: 0 auto; overflow:hidden;}
+
+/*超出li宽度 要定义度 自动隐藏 并显示省略号*/
+/*.ul li a { display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }*/
+
+/*段落首行缩进 空2个字的距离，em是以当前字号大小为单位*/
+/*
+p{
+text-indent:2em;
+margin:0px;
+padding:0px;
+}
+*/
+/*注意一定要加上margin和padding都为0，否则不起作用*/
+
+/*使span元素浮动到右面 日期右对齐*/
+/*
+.news ul li span{
+float: right;
+text-align: right;
+}
+*/
+
+/*内容超长时用省略号代替*/
+/*
+#o_title{ width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+*/
+
+/*在有浮动的时候在ie6.0是居右并非20px，而是40px,即加倍问题,解块办法加上display:inline */ 
+
+/*
+Firefox:div{...}
+IE7:*+html div{...}
+IE6:*html div{...}
+*/
+
+/*最小高度*/
+#min-height-my {
+min-height:200px;/*IE7\FF*/
+height:100%;/*IE6\IE7\FF 这个很重要，IE6定死高度后，需要再加上这条，才能自动延伸*/
+_height:200px;/*IE6*/
+}
+
+/*
+<br style="line-height:0;"/>
+*/
+/*---------- e 常用样式 ----------*/
+
+/* 自定义开始 */
+/*清除原样式请使用 clear:both*/
+
+
+
+
+/* 自定义结束 */
